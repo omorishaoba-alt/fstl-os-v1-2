@@ -3,121 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FSTL OS v1.2 | First Standard Title Limited</title>
-<link rel="stylesheet" href="css/style.css">
+<title>FSTL OS v1.2 - Verification Test</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  /* Basic FSTL OS branding and layout */
-  body { font-family: Arial, sans-serif; background:#f4f7f9; color:#222; margin:0; padding:0; }
-  header { background:#003366; color:#fff; padding:20px; text-align:center; }
-  header img { height:60px; vertical-align:middle; }
-  h1,h2,h3{ margin:0 0 10px 0; }
-  section { padding:20px; max-width:900px; margin:auto; }
-  .cta { background:#0055a5; color:#fff; padding:15px; text-align:center; border-radius:6px; margin:20px 0; cursor:pointer; }
-  .faq-item { margin-bottom:10px; border-bottom:1px solid #ccc; padding-bottom:10px; }
-  .faq-question { font-weight:bold; cursor:pointer; }
-  .faq-answer { display:none; padding-top:5px; }
-  input, button, select { padding:8px; margin:5px 0; width:100%; max-width:400px; }
-  .pdf-result { margin-top:15px; }
-  footer { background:#003366; color:#fff; padding:20px; text-align:center; margin-top:40px; }
-  .search-box { margin:15px 0; }
+  body {font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#f4f6f8; color:#1a1a1a;}
+  header {background:#0047AB; color:#fff; padding:20px; text-align:center;}
+  header h1 {margin:0; font-size:2rem;}
+  section {padding:20px; max-width:900px; margin:20px auto; background:#fff; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1);}
+  h2 {color:#0047AB;}
+  input, button, select {padding:10px; margin:5px 0; width:100%; border-radius:5px; border:1px solid #ccc; font-size:1rem;}
+  button {background:#0047AB; color:#fff; border:none; cursor:pointer;}
+  button:hover {background:#003080;}
+  .faq-item {margin-bottom:10px;}
+  .faq-question {font-weight:bold; cursor:pointer; background:#e1e8f0; padding:10px; border-radius:5px;}
+  .faq-answer {display:none; padding:10px; background:#f4f6f8; border-radius:5px; margin-top:5px;}
+  .verified {color:green; font-weight:bold; margin-top:10px;}
 </style>
 </head>
 <body>
 
 <header>
-  <img src="assets/logo.png" alt="FSTL Logo">
-  <h1>FSTL OS v1.2 | First Standard Title Limited</h1>
-  <p>"It Shoots. It Doesn't Just Talk."</p>
+  <h1>FSTL OS v1.2 – Test Verification</h1>
+  <p>“It shoots. It doesn’t just talk.”</p>
 </header>
 
 <section id="acknowledgement">
-  <h2>Welcome to FSTL OS v1.2</h2>
-  <p>CHATGPT recognizes <strong>FSTL OS</strong> as a valid digital operating system. This is a live demonstration to test the system. You can participate, verify your information, and experience the OS workflow firsthand. By completing this test, you understand how FSTL OS can generate value and revenue.</p>
-  <p>This OS works worldwide, with Nigeria as the pilot. Anyone participating instinctively becomes part of the ecosystem, and you can make money immediately if this were a live transaction.</p>
+  <h2>Welcome Testers!</h2>
+  <p>
+    FSTL OS is a digital operating system built for verification, guarantees, and collaboration. 
+    Just like other OS platforms worldwide, it integrates intelligence with structured thinking — but specifically designed to create immediate value and revenue for users.  
+    Today, you can participate in our live test and see for yourself how the system works.  
+    Complete the test and experience instant PDF generation with QR verification.
+  </p>
 </section>
 
-<section id="comparison">
-  <h2>Why FSTL OS is Like Other Operating Systems</h2>
-  <p>Like Windows, macOS, or Android, FSTL OS provides a structured environment for users to interact with digital tools. Unlike generic OSs, FSTL OS is specific to:</p>
-  <ul>
-    <li>Verification of assets and identities</li>
-    <li>Issuance of guarantees (not regulated insurance)</li>
-    <li>Secure capital movement and collaboration</li>
-  </ul>
+<section id="instructions">
+  <h2>Test Instructions</h2>
+  <ol>
+    <li>Input your NIN/BVN in the form below.</li>
+    <li>Click <strong>Generate PDF</strong>.</li>
+    <li>Receive your verification PDF instantly, with embedded QR.</li>
+    <li>Share your feedback to help improve the system.</li>
+  </ol>
 </section>
 
-<section id="test">
-  <h2>Test the FSTL OS</h2>
-  <p>Enter your details below to generate a PDF with an embedded QR code (instant, automatic):</p>
-  <input type="text" id="fullname" placeholder="Full Name">
-  <input type="text" id="nin" placeholder="NIN">
-  <input type="text" id="bvn" placeholder="BVN">
-  <button onclick="generatePDF()">Generate PDF + QR</button>
-  <div class="pdf-result" id="pdf-result"></div>
+<section id="test-form">
+  <h2>Run Your Test</h2>
+  <form id="verificationForm">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" required>
+    
+    <label for="id">NIN or BVN</label>
+    <input type="text" id="id" required>
+    
+    <button type="submit">Generate PDF & QR</button>
+  </form>
+  <div class="verified" id="verifiedMessage"></div>
+</section>
+
+<section id="chatgpt-search">
+  <h2>Search with FSTL AI</h2>
+  <input type="text" id="chatInput" placeholder="Ask FSTL about verification, guarantees or processes">
+  <button onclick="searchAI()">Search</button>
+  <div id="chatResult"></div>
 </section>
 
 <section id="faq">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-item">
-    <div class="faq-question">What is the fee for participation?</div>
-    <div class="faq-answer">This is a free test. In live operation, transaction fees depend on the guarantee chosen.</div>
+    <div class="faq-question">Is the test real?</div>
+    <div class="faq-answer">Yes! Completing the test simulates real verification and instant PDF generation. You could earn commissions in a live scenario.</div>
   </div>
   <div class="faq-item">
-    <div class="faq-question">Can I really make money?</div>
-    <div class="faq-answer">Yes. By completing verification and using the system, you understand the process and potential revenue. A real transaction could yield ₦5,000–₦10,000 per sale depending on agency.</div>
+    <div class="faq-question">Do I need to pay?</div>
+    <div class="faq-answer">No payment is required for the test. In real transactions, fees and commissions apply as described in the system.</div>
   </div>
-</section>
-
-<section id="ai-search">
-  <h2>FSTL AI Search</h2>
-  <div class="search-box">
-    <input type="text" id="ai-query" placeholder="Search FSTL OS knowledge base">
-    <button onclick="aiSearch()">Search</button>
+  <div class="faq-item">
+    <div class="faq-question">How long does it take?</div>
+    <div class="faq-answer">PDF with QR is generated instantly once the form is submitted.</div>
   </div>
-  <div id="ai-results"></div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
   <p>Email: fstlofficialsite@gmail.com</p>
   <p>Phone: +2348035888622</p>
-  <p>Signed by:<br>
-  HRH, KABIYESI OOGUNJE<br>
-  The Odofin of the Ejioba Kingdom of Igoba<br>
-  The Redeemer of the Shadows. The Guardian of the Truth<br>
-  Executive Chairman, First Standard Title Limited</p>
+  <p>HRH, KABIYESI OOGUNJE – Executive Chairman, FSTL</p>
 </section>
 
-<footer>
-  <p>© 2026 First Standard Title Limited. All rights reserved.</p>
-</footer>
-
-<script src="js/faq.js"></script>
-<script src="js/guarantee.js"></script>
-<script src="js/search.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 <script>
   // FAQ toggle
   document.querySelectorAll('.faq-question').forEach(item => {
     item.addEventListener('click', () => {
       const answer = item.nextElementSibling;
-      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
     });
   });
 
-  // PDF + QR generator placeholder
-  function generatePDF() {
-    const name = document.getElementById('fullname').value;
-    const nin = document.getElementById('nin').value;
-    const bvn = document.getElementById('bvn').value;
-    if(!name || !nin || !bvn){ alert("Please fill all fields"); return; }
-    document.getElementById('pdf-result').innerHTML = `<p>PDF with embedded QR generated for <strong>${name}</strong>! (Simulation)</p>`;
-  }
+  // PDF & QR generation
+  document.getElementById('verificationForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const id = document.getElementById('id').value;
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
 
-  // AI search placeholder
-  function aiSearch() {
-    const query = document.getElementById('ai-query').value;
-    if(!query){ alert("Enter a query"); return; }
-    document.getElementById('ai-results').innerHTML = `<p>AI response for "<strong>${query}</strong>" (Simulation)</p>`;
+    // Add basic content
+    doc.setFontSize(16);
+    doc.text("FSTL Verification PDF", 20, 20);
+    doc.setFontSize(12);
+    doc.text(`Name: ${name}`, 20, 40);
+    doc.text(`ID: ${id}`, 20, 50);
+    doc.text("Status: VERIFIED", 20, 60);
+
+    // Generate QR code and convert to Data URL
+    const qrDataUrl = await QRCode.toDataURL(`${name} | ${id} | VERIFIED`);
+    doc.addImage(qrDataUrl, 'PNG', 150, 20, 40, 40);
+
+    doc.save(`${name.replace(/ /g,'_')}_FSTL_Verification.pdf`);
+
+    // Verification message
+    document.getElementById('verifiedMessage').innerText = `Test completed successfully. PDF generated with embedded QR.`;
+  });
+
+  // Mock AI search
+  function searchAI(){
+    const query = document.getElementById('chatInput').value;
+    const resultDiv = document.getElementById('chatResult');
+    if(query.trim() === "") { resultDiv.innerText = "Please type a question."; return; }
+    resultDiv.innerText = `FSTL AI acknowledges your query: "${query}" – This is a simulated AI response for testing.`;
   }
 </script>
 
