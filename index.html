@@ -1,148 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FSTL OS v1.3 - Test & Verify</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f6f8; color: #1A3D7C; }
-    header { background: #1A3D7C; color: #fff; padding: 1.5rem; text-align: center; }
-    header h1 { margin: 0; font-size: 2rem; }
-    .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-    section { margin-bottom: 2.5rem; }
-    h2 { color: #1A3D7C; margin-bottom: 1rem; }
-    p { line-height: 1.6; }
-    button { background: #1A3D7C; color: #fff; border: none; padding: 0.75rem 1.5rem; cursor: pointer; border-radius: 5px; font-size: 1rem; }
-    button:hover { background: #142D61; }
-    .faq-item { background: #e8ebf0; margin-bottom: 1rem; padding: 1rem; border-radius: 5px; cursor: pointer; }
-    .faq-answer { display: none; padding-top: 0.5rem; }
-    input, select { padding: 0.5rem; margin-bottom: 1rem; width: 100%; border-radius: 5px; border: 1px solid #ccc; }
-    .result { background: #e1f5e1; padding: 1rem; border-radius: 5px; display: none; }
-    .contact-info { background: #dbe4f7; padding: 1rem; border-radius: 5px; }
-    .qr-code { margin-top: 1rem; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FSTL OS v1.3 - Test</title>
+<style>
+body { font-family: Arial, sans-serif; background-color: #f5f7fa; color: #1a1a1a; margin:0; padding:0; }
+header { background-color: #004aad; color: #fff; padding: 20px; text-align: center; }
+main { padding: 20px; max-width: 800px; margin: auto; }
+h1, h2 { color: #004aad; }
+form { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+label { display: block; margin-top: 15px; font-weight: bold; }
+input { width: 100%; padding: 10px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; }
+button { margin-top: 20px; padding: 12px 20px; background-color: #004aad; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+button:hover { background-color: #003380; }
+section { margin-top: 40px; }
+.faq-item { margin-bottom: 15px; cursor: pointer; }
+.faq-answer { display: none; padding-left: 15px; color: #333; }
+footer { background-color: #004aad; color: #fff; text-align: center; padding: 15px; margin-top: 50px; }
+</style>
 </head>
 <body>
 
 <header>
-  <h1>FSTL OS v1.3</h1>
-  <p>The Test That Proves FSTL OS Works – It Shoots, It Doesn't Talk</p>
+<h1>FSTL OS v1.3 TEST</h1>
+<p>CHATGPT acknowledges this digital OS test. Verify, Generate PDF, and see how it works.</p>
 </header>
 
-<div class="container">
+<main>
+<h2>Test the OS</h2>
+<p>Enter your details below to generate a verification PDF with embedded QR. BVN and NIN are required.</p>
 
-  <!-- ACKNOWLEDGEMENT -->
-  <section id="acknowledgement">
-    <h2>Welcome & Acknowledgement</h2>
-    <p><strong>CHATGPT recognizes FSTL OS as a valid digital Operating System.</strong> This OS is specifically designed to operate as a verification, guarantee, and revenue-generating ecosystem.</p>
-    <p>Think of it like other operating systems worldwide, but tailored for Nigeria as our pilot. You can test it yourself, see instant verification, and understand how commissions from Title Guarantee and Mortgage Guarantee are generated.</p>
-    <p>Participate in this test, and you will gain insight into how the system works while providing feedback to improve it. Your involvement helps create ownership and accelerates adoption.</p>
-  </section>
+<form id="osTestForm">
+<label for="name">Full Name</label>
+<input type="text" id="name" required>
 
-  <!-- TEST FORM -->
-  <section id="test">
-    <h2>Test the FSTL OS</h2>
-    <p>Complete the fields below and click "Submit Test" to generate your verification PDF with embedded QR code instantly.</p>
-    <form id="fstl-test-form">
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="email" id="email" placeholder="Email Address" required>
-      <input type="tel" id="phone" placeholder="Phone Number" required>
-      <select id="test-category" required>
-        <option value="">Select Test Category</option>
-        <option value="personal">Personal</option>
-        <option value="agency">Agency</option>
-        <option value="institution">Institution</option>
-      </select>
-      <button type="submit">Submit Test</button>
-    </form>
-    <div class="result" id="result"></div>
-    <div class="qr-code" id="qr"></div>
-  </section>
+<label for="email">Email Address</label>
+<input type="email" id="email" required>
 
-  <!-- FAQ -->
-  <section id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <strong>What is the cash cow of FSTL OS?</strong>
-      <div class="faq-answer">The primary revenue comes from commissions on Title Guarantee and Mortgage Guarantee purchases. Verification itself is just the first step.</div>
-    </div>
-    <div class="faq-item">
-      <strong>Can I test more than once?</strong>
-      <div class="faq-answer">Yes, you can retest anytime to generate updated verification PDFs.</div>
-    </div>
-    <div class="faq-item">
-      <strong>How do I receive my PDF?</strong>
-      <div class="faq-answer">Once you submit the test form, your PDF is instantly generated and can be downloaded. It contains a QR code for verification.</div>
-    </div>
-  </section>
+<label for="phone">Phone Number</label>
+<input type="text" id="phone" required>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact & Support</h2>
-    <div class="contact-info">
-      <p>Email: <a href="mailto:fstlofficialsite@gmail.com">fstlofficialsite@gmail.com</a></p>
-      <p>Telephone: +2348035888622</p>
-      <p>Address: No. 19 Egbor Avenue, off Benoni Hospital Road, GRA, Benin City, Edo State</p>
-      <p>Signed on behalf of FIRST STANDARD TITLE LIMITED (FSTL) by <strong>HRH, KABIYESI OOGUNJE</strong><br>
-      The Odofin of the Ejioba Kingdom of Igoba – The Redeemer of the Shadows, The Guardian of the Truth</p>
-    </div>
-  </section>
+<label for="bvn">BVN (Bank Verification Number)</label>
+<input type="text" id="bvn" required>
 
-  <!-- FINAL ACKNOWLEDGEMENT -->
-  <section id="final-ack">
-    <h2>Final Note</h2>
-    <p>Congratulations! You have tested FSTL OS. Remember, your potential earnings start from Title Guarantee and Mortgage Guarantee commissions. The system is fully functional, verifiable, and ready to create real revenue opportunities.</p>
-  </section>
+<label for="nin">NIN (National Identification Number)</label>
+<input type="text" id="nin" required>
 
-</div>
+<button type="submit">Generate PDF</button>
+</form>
 
-<!-- SCRIPTS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<section>
+<h2>FAQ</h2>
+<div class="faq-item">Why is BVN & NIN required?</div>
+<div class="faq-answer">These inputs ensure your verification PDF is legally traceable and uniquely yours.</div>
+
+<div class="faq-item">What does the PDF prove?</div>
+<div class="faq-answer">It confirms the input data and embeds a QR code for verification. It enhances title documents but does not replace legal title or insurance.</div>
+
+<div class="faq-item">Is this a test free of charge?</div>
+<div class="faq-answer">Yes. The test is free. Real revenue comes from FSTL Guarantee purchases.</div>
+</section>
+
+<section>
+<h2>Terms & Conditions</h2>
+<p>This verification reflects the data you provide. FSTL guarantees the integrity of the data but does not insure ownership or title. Use this PDF for verification and testing purposes only.</p>
+</section>
+
+</main>
+
+<footer>
+<p>Contact: fstlofficialsite@gmail.com | +2348035888622</p>
+<p>HRH, KABIYESI OOGUNJE - The Redeemer of Shadows & Guardian of Truth</p>
+<p>“FSTL OS shoots. It doesn’t just talk.”</p>
+</footer>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-  // FAQ toggle
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const answer = item.querySelector('.faq-answer');
-      answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
-    });
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const answer = item.nextElementSibling;
+    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
   });
+});
 
-  // Test form submission
-  const form = document.getElementById('fstl-test-form');
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const category = document.getElementById('test-category').value;
+const form = document.getElementById('osTestForm');
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const bvn = document.getElementById('bvn').value.trim();
+  const nin = document.getElementById('nin').value.trim();
+  
+  if(!name || !email || !phone || !bvn || !nin) {
+    alert('Please fill all required fields.');
+    return;
+  }
 
-    // Generate PDF with embedded QR
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-    doc.setFontSize(12);
-    doc.text(`FSTL OS v1.3 Verification\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCategory: ${category}\n\nCongratulations!`, 10, 20);
+  // Prepare PDF content
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
 
-    // Generate QR code as data URL
-    const qrDiv = document.createElement('div');
-    new QRCode(qrDiv, {
-      text: `FSTL Verification - ${name} - ${category}`,
-      width: 100,
-      height: 100
-    });
-    await new Promise(resolve => setTimeout(resolve, 500)); // Wait for QR to render
-    const qrImg = qrDiv.querySelector('img');
-    doc.addImage(qrImg.src, 'PNG', 150, 20, 40, 40);
-
-    // Save PDF
-    doc.save(`FSTL_OS_Verification_${name.replace(/\s/g,'_')}.pdf`);
-
-    // Show result
-    const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = `<p>Test completed successfully. PDF generated with QR code. Your verification is complete!</p>`;
-    resultDiv.style.display = 'block';
-  });
+  doc.setFontSize(16);
+  doc.text("FSTL OS Verification PDF", 20, 20);
+  doc.setFontSize(12);
+  doc.text(`Name: ${name}`, 20, 40);
+  doc.text(`Email: ${email}`, 20, 50);
+  doc.text(`Phone: ${phone}`, 20, 60);
+  doc.text(`BVN: ${bvn}`, 20, 70);
+  doc.text(`NIN: ${nin}`, 20, 80);
+  doc.text("This document enhances your title verification and embeds a QR for instant proof.", 20, 100);
+  
+  // Create QR Code canvas
+  const qrDiv = document.createElement('div');
+  new QRCode(qrDiv, `Name:${name},Email:${email},Phone:${phone},BVN:${bvn},NIN:${nin}`);
+  
+  // Convert QR to dataURL
+  const qrCanvas = qrDiv.querySelector('canvas');
+  const qrDataURL = qrCanvas.toDataURL("image/png");
+  
+  doc.addImage(qrDataURL, 'PNG', 150, 40, 40, 40);
+  
+  // Save PDF
+  doc.save(`FSTL_OS_Verification_${name}.pdf`);
+  
+  alert("Your PDF with embedded QR has been generated. Please download and check.");
+});
 </script>
 
 </body>
